@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  post "/login", to: "users#login"
+  get "/me", to: "users#show"
+
   resources :rentals
   resources :reviews
   resources :games
