@@ -12,7 +12,13 @@ class RentalsController < ApplicationController
 
    def create 
       rental = Rental.create(cart_id: params[:cart_id], duration: params[:duration], game_id: params[:game_id])
+      render json: rental 
    end 
+
+   def destroy
+      rental = Rental.find(params[:id]).destroy
+      render json: {}
+   end
 
    #will need to be able to create and destroy rentals add/remove from cart pretty much 
 end
